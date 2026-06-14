@@ -1,0 +1,388 @@
+{
+  "info": {
+    "_postman_id": "d4b259a3-1ffc-40f2-b658-1836569d656e",
+    "name": "Labo04",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "39214456",
+    "_collection_link": "https://go.postman.co/collection/39214456-d4b259a3-1ffc-40f2-b658-1836569d656e?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Sign up",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"username\": \"admin\",\r\n  \"name\": \"Nombre\",\r\n  \"surname\": \"Apellido\",\r\n  \"email\": \"correo@dominio.com\",\r\n  \"password\": \"00073123Aa!\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4000/api/auth/signup",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "4000",
+          "path": [
+            "api",
+            "auth",
+            "signup"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"username\": \"Admin\",\r\n  \"password\": \"00073123Aa!\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4000/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "4000",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Profile",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"00073123Aa!\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4000/api/auth/profile",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "4000",
+          "path": [
+            "api",
+            "auth",
+            "profile"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Profile",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"username\": \"Admin\",\r\n  \"name\": \"Nuevo Nombre\",\r\n  \"surname\": \"Nuevo Apellido\",\r\n  \"email\": \"nuevo@dominio.com\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4000/api/auth/update/profile",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "4000",
+          "path": [
+            "api",
+            "auth",
+            "update",
+            "profile"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Change Password",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"oldpassword\": \"00073123Aa!\",\r\n  \"newpassword\": \"New00073123Aa!\",\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4000/api/auth/update/password",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "4000",
+          "path": [
+            "api",
+            "auth",
+            "update",
+            "password"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear préstamo",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"capitalSolicitado\": 10000,\r\n  \"tasaInteresAnual\": 12,\r\n  \"plazoMeses\": 12\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4000/api/finanzas/prestamos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "4000",
+          "path": [
+            "api",
+            "finanzas",
+            "prestamos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Préstamos",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"capitalSolicitado\": 10000,\r\n  \"tasaInteresAnual\": 12,\r\n  \"plazoMeses\": 12\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:4000/api/finanzas/prestamos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "4000",
+          "path": [
+            "api",
+            "finanzas",
+            "prestamos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Planes de Pago por Préstamo",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4000/api/finanzas/prestamos/1/planes-pago",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "4000",
+          "path": [
+            "api",
+            "finanzas",
+            "prestamos",
+            "1",
+            "planes-pago"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear Abono",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"planPagoId\": \"1\",\r\n  \"monto\": 888.49\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4000/api/finanzas/abonos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "4000",
+          "path": [
+            "api",
+            "finanzas",
+            "abonos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Resumen Credito",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4000/api/finanzas/resumen-credito",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "4000",
+          "path": [
+            "api",
+            "finanzas",
+            "resumen-credito"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
